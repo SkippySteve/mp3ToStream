@@ -1,7 +1,7 @@
-import sys #for args and ending if not enough args supplied
-import os #for getting list of files in mp3 directory
-import subprocess #for issuing ffmpeg commands
-import random #for randomness of shuffle
+import sys	#for args and ending if not enough args supplied
+import os	#for getting list of files in mp3 directory
+import subprocess	#for issuing ffmpeg commands
+import random	#for randomness of shuffle
 
 if len(sys.argv) < 4:
 	print("Less than needed number of arguments provided. Example: python livestream.py mp3.Directory.Here ImageHere StreamKeyHere")
