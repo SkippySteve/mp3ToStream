@@ -25,6 +25,6 @@ numNotOne = 0
 while numNotOne != 1:	#just ensuring the loop never ends...
 	currentTrack = mp3List[random.randrange(len(mp3List))]
 	print("Currently playing: ", currentTrack)
-	subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-re", "-loop", "1", "-f", "image2", "-i", sys.argv[2], "-i", str(sys.argv[1]+currentTrack), "-codec:a", "copy", "-shortest", "-f", "flv", sys.argv[3])])
+	subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-re", "-loop", "1", "-f", "image2", "-i", sys.argv[2], "-i", str(sys.argv[1]+currentTrack), "-vf", str("drawtext=fontfile=/usr/share/fonts/FiraSans-Heavy.ttf:text="+currentTrack+":fontcolor=white:fontsize=24:box=1:boxcolor=black@0.5:boxborderw=5:x=(w-text_w)/2:y=(h-text_h)/4)", "-codec:a", "copy", "-shortest", "-f", "flv", sys.argv[3])])
 
 #for text on screen, arg for ffmpeg: "-vf", str("drawtext=fontfile=/usr/share/fonts/FiraSans-Heavy.ttf:text="+currentTrack+":fontcolor=white:fontsize=24:box=1:boxcolor=black@0.5:boxborderw=5:x=(w-text_w)/2:y=(h-text_h)/4)"
